@@ -1,4 +1,4 @@
-import { Component, ViewChild, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
@@ -7,7 +7,7 @@ import * as $ from 'jquery';
   styleUrls: ['./tooltip.component.scss']
 })
 
-export class TooltipComponent {
+export class TooltipComponent implements OnInit {
 
   private _state: Object = {};
   private bottom: boolean = false;
@@ -19,15 +19,28 @@ export class TooltipComponent {
     return this._state;
   }
 
+  computeDirection(): void {
+    const tooltip = $('#toolTip');
+    this.bottom = (tooltip.offset().top - tooltip.height()) < 0;
+  }
+
   @Input()
   set state(value: Object) {
     this._state = value;
     if (this._state['show']) {
-      const tooltip = $('#toolTip');
-      this.bottom = (tooltip.offset().top - tooltip.height()) < 0;
+      this.computeDirection()
     }
   }
 
   constructor() { }
+
+  ngOnInit() {
+    $(document).on('keyup', e => {
+      if (e.keyCode === 27) {
+        this._state['show'] = false;
+        this.computeDirection();
+      }
+    })
+  }
 
 }
