@@ -1,0 +1,53 @@
+// Webpack should be configured to support absolute referencing
+// To ease `Theme variables` import
+@import '../sass-variables/theme-variables.scss';
+@import './tooltip-variables.scss';
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+
+  &__tooltiptext {
+    visibility: hidden;
+    width: $width;
+    background-color: $dark-gray;
+    color: $white;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    margin-left: -($width / 2);
+    opacity: 0;
+    transition: opacity 1s;
+    bottom: 125%;
+  }
+
+  &__tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: $dark-gray transparent transparent transparent;
+  }
+
+  &__tooltiptext.bottom {
+    bottom: auto;
+    top: 125%;
+  }
+
+  &__tooltiptext.bottom::after {
+    top: -0.6rem;
+    border-color: transparent transparent $dark-gray transparent;
+  }
+
+  &__show-tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+}
