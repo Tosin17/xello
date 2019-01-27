@@ -1,8 +1,7 @@
 <div class="tooltip">Test me
   <span class="tooltip__tooltiptext"
-        [ngClass]="{
-                      'tooltip__show-tooltip': state.show,
-                      'bottom': bottom
-                    }"
-        id=toolTip>{{ text }}</span>
+        id="toolTipText"
+        [ngClass]="{'tooltip__show-tooltip': state.show,'bottom': bottom}">
+    {{ text }}
+  </span>
 </div>

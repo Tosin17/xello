@@ -20,8 +20,12 @@ export class TooltipComponent implements OnInit {
   }
 
   computeDirection(): void {
-    const tooltip = $('#toolTip');
+    const tooltip = $('#toolTipText');
     this.bottom = (tooltip.offset().top - tooltip.height()) < 0;
+  }
+
+  clearState() {
+    this._state = {};
   }
 
   @Input()
@@ -35,12 +39,19 @@ export class TooltipComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    $(document).on('keyup', e => {
-      if (e.keyCode === 27) {
-        this._state['show'] = false;
+    $('body').on('keyup', e => {
+      if (e.keyCode === 27 && this._state['show']) {
+        this.clearState();
         this.computeDirection();
       }
     })
+
+    // $('body *:not(#toolTipText)').on('click', () => {
+    //   if (this._state['show']) {
+    //     this.clearState();
+    //     this.computeDirection();
+    //   }
+    // })
   }
 
 }
