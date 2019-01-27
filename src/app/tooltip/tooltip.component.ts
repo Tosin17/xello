@@ -46,12 +46,12 @@ export class TooltipComponent implements OnInit {
       }
     })
 
-    // $('body *:not(#toolTipText)').on('click', () => {
-    //   if (this._state['show']) {
-    //     this.clearState();
-    //     this.computeDirection();
-    //   }
-    // })
+    $('body *:not(#toolTipText)').on('click', () => {
+      if (this._state['show']) {
+        this.clearState();
+        this.computeDirection();
+      }
+    })
   }
 
 }
