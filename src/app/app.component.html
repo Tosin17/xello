@@ -1,7 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="app-component">
-  <h1>
-    Xello!
-  </h1>
+  <h1>Xello!</h1>
+  <div>
+    <app-tooltip [state]="toolTip"
+                 [text]="textForToolTipA"></app-tooltip><br />
+    <button (click)="showToolTip()">Show Tool Tip A</button>
+  </div>
 
 </div>

@@ -1,5 +1,6 @@
-@import './sass-variables/variables.scss';
+@import './sass-variables/theme-variables.scss';
 
 .app-component {
   background: $light-gray;
+  padding: 1% 0 1% 5%
 }
