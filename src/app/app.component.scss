@@ -6,6 +6,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 45vh;
+  background: -webkit-linear-gradient(to right, $xello-green-ish, $xello-lemon-ish);
+  background: linear-gradient(to right, $xello-green-ish, $xello-lemon-ish);
 
   &__content {
     display: flex;
