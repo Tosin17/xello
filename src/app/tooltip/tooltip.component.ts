@@ -37,6 +37,7 @@ export class TooltipComponent implements OnInit {
 
   ngOnInit() {
 
+    // On `ESC` hide tooltip
     $('body').on('keyup', e => {
       if (e.keyCode === 27 && this._state['show']) {
         this.clearState();
@@ -44,6 +45,7 @@ export class TooltipComponent implements OnInit {
       }
     })
 
+    // On `CLICK` outside tooltip, hide it
     $(document).on('mouseup', e => {
       const toolTip = $('.tooltip');
 
@@ -54,6 +56,7 @@ export class TooltipComponent implements OnInit {
 
     })
 
+    // On `SCROLL to top of page` if tooltip is displayed, update its display direction
     $(document).on('scroll', () => {
       const tooltip = $('.tooltip');
       if ($(window).scrollTop() > (tooltip.offset().top - tooltip.height() - 80) && this._state['show']) {
