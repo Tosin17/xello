@@ -1,6 +1,13 @@
 @import './sass-variables/theme-variables.scss';
 
 .app-component {
-  background: $light-gray;
-  padding: 1% 0 1% 5%
+  background: $white;
+  padding: 1% 0 1% 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__content {
+    display: flex;
+  }
 }

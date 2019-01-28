@@ -11,7 +11,6 @@ export class TooltipComponent implements OnInit {
 
   private _state: Object = {};
   private bottom: boolean = false;
-  private top: boolean = false;
 
   @Input() text: String = 'Dummy text'
 
