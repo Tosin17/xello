@@ -39,6 +39,7 @@ export class TooltipComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
     $('body').on('keyup', e => {
       if (e.keyCode === 27 && this._state['show']) {
         this.clearState();
@@ -46,11 +47,14 @@ export class TooltipComponent implements OnInit {
       }
     })
 
-    $('body *:not(#toolTipText)').on('click', () => {
-      if (this._state['show']) {
-        this.clearState();
+    $(document).on('mouseup', e => {
+      const toolTip = $('.tooltip');
+
+      if (!toolTip.is(e.target) && toolTip.has(e.target).length === 0 && this._state['show']) {
+        this._state['show'] = false;
         this.computeDirection();
       }
+
     })
   }
 

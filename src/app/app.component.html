@@ -3,8 +3,11 @@
   <h1>Xello!</h1>
   <div>
     <app-tooltip [state]="toolTip"
-                 [text]="textForToolTipA"></app-tooltip><br />
-    <button (click)="showToolTip()">Show Tool Tip A</button>
+                 [text]="textForToolTipA">
+    </app-tooltip>
+    <br />
+    <button (click)="showToolTip()"
+            id="buttonForToolTipA">Show Tool Tip A</button>
   </div>
 
 </div>
