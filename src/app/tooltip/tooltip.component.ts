@@ -36,8 +36,6 @@ export class TooltipComponent implements OnInit {
     }
   }
 
-  constructor() { }
-
   ngOnInit() {
 
     $('body').on('keyup', e => {

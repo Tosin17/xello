@@ -2,12 +2,15 @@
 <div class="app-component">
   <h1>Xello!</h1>
   <div>
-    <app-tooltip [state]="toolTip"
+    <app-tooltip [state]="toolTipA"
                  [text]="textForToolTipA">
     </app-tooltip>
+    <app-tooltip [state]="toolTipB"
+                 [text]="textForToolTipB">
+    </app-tooltip>
     <br />
-    <button (click)="showToolTip()"
-            id="buttonForToolTipA">Show Tool Tip A</button>
+    <button (click)="showToolTipA()">Show Tool Tip A</button>
+    <button (click)="showToolTipB()">Show Tool Tip B</button>
   </div>
 
 </div>
