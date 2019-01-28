@@ -15,8 +15,8 @@ A configurable tool tip that accepts 2 parameters.
              [text]="Text to be displayed">
 </app-tooltip>
 ```
-**STATE : Object**
+```state : Object```
 Accepts an object literal and displays or hides if the property ```show``` is truthy or falsey.
 
-**TEXT : String**
+```text : String```
 Displays a string or a dummy text if string is empty.
