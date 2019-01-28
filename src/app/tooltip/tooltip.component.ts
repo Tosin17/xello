@@ -20,7 +20,7 @@ export class TooltipComponent implements OnInit {
 
   computeDirection(): void {
     const tooltip = $('#toolTipText');
-    this.bottom = (tooltip.offset().top - tooltip.height()) < 0;
+    this.bottom = (tooltip.offset().top - $(window).scrollTop()) < 10;
   }
 
   clearState() {
@@ -52,6 +52,13 @@ export class TooltipComponent implements OnInit {
         this.computeDirection();
       }
 
+    })
+
+    $(document).on('scroll', () => {
+      const tooltip = $('.tooltip');
+      if ($(window).scrollTop() > (tooltip.offset().top - tooltip.height() - 80) && this._state['show']) {
+        this.bottom = true;
+      }
     })
   }
 

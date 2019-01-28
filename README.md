@@ -4,4 +4,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Project Description
 
-Tool tip components that use a shared service for messaging
+A configurable tool tip that accepts 2 parameters.
