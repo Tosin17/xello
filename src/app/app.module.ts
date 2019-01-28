@@ -5,16 +5,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { DummyTextComponent } from './dummy-text/dummy-text.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+
+const appRoute: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  }
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     TooltipComponent,
-    DummyTextComponent
+    DummyTextComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]

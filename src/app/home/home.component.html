@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="home-component">
+  <div class="home-component__container">
+    <div class="home-component__heading">
+      <img src="../assets/xello-logo.svg"
+           width="500"
+           alt="xello-logo">
+    </div>
+    <div class="home-component__content">
+      <div class="home-component__tooltipA">
+        <app-tooltip [state]="toolTipA"
+                     [text]="textForToolTipA">
+        </app-tooltip>
+        <button class="home-component__button home-component__button--tooltipA"
+                (click)="showToolTipA()">Show Tool Tip A</button>
+      </div>
+      <div class="home-component__tooltipB">
+        <app-tooltip [state]="toolTipB"
+                     [text]="textForToolTipB">
+        </app-tooltip>
+        <button class="home-component__button home-component__button--tooltipB"
+                (click)="showToolTipB()">Show Tool Tip B</button>
+      </div>
+    </div>
+  </div>
+  <app-dummy-text></app-dummy-text>
+</div>
